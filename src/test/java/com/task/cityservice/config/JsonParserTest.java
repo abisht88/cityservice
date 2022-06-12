@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.junit.Ignore;
+
 import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
@@ -56,8 +56,7 @@ public class JsonParserTest {
         list.add(new City("Warsaw", "Poland", 1765000));
         list.add(new City("Pune", "India", 4000000));
     }
-
-    @Ignore	
+	
     @Test
     public void willConvertToJson() throws JsonProcessingException {
         City city = new City("London", "UK", 9000000);
@@ -66,7 +65,6 @@ public class JsonParserTest {
         assertEquals(json, new JsonParser().convertToJson(city));
     }
     
-   @Ignore 
     @Test
     public void willParseCityData() throws IOException {
         List<City> list = new JsonParser().parseJsonData(json);
